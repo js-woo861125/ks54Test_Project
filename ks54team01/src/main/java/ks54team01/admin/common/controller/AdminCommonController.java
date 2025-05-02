@@ -19,7 +19,7 @@ public class AdminCommonController {
 		return "admin/enterprise/enterpriseListView";
 	}
 	
-	@GetMapping("/adminfee")
+	@GetMapping("/payment")
 	public String getadminfee() {
 		
 		return "admin/payment/adminfeeView";
