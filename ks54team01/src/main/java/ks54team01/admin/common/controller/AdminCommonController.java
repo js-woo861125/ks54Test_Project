@@ -13,4 +13,15 @@ public class AdminCommonController {
 		
 		return "admin/main";
 	}
+	@GetMapping("/enterpriseList")
+	public String getenterpriseList() {
+		
+		return "admin/enterprise/enterpriseListView";
+	}
+	
+	@GetMapping("/payment")
+	public String getadminfee() {
+		
+		return "admin/payment/adminfeeView";
+	}
 }
