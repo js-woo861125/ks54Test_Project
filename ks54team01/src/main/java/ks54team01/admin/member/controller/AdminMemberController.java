@@ -8,11 +8,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/admin/member")
 public class AdminMemberController {
 
-	@GetMapping("/memberList") 
-		public String memberList() {
+	@GetMapping("loginHistoryList")
+	public String loginHistoryList() {
 		
-			return "admin/member/memberListView";
-		}
+		return "admin/member/loginHistoryListView";
+	}
+	
+	@GetMapping("/memberList") 
+	public String memberList() {
+		
+		return "admin/member/memberListView";
+	}
 	
 	
 }
