@@ -44,4 +44,9 @@ public class AdminPaymentController {
 		return "admin/payment/paymentListView";
 	}
 	
+	@GetMapping("/calculate")
+	public String getadminpayment() {
+		
+		return "admin/payment/calculateView";
+	}
 }
