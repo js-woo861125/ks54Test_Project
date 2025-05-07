@@ -72,7 +72,6 @@
 								<th class="align-middle" scope="col">등록일</th>
 								<th class="align-middle" scope="col">출발일</th>
 								<th class="align-middle" scope="col">배송완료일</th>
-								<th class="align-middle" scope="col">정보등록</th>
 							</tr>
 						</thead>
 						<tbody class="text-center">
@@ -92,7 +91,6 @@
 								<td th:text="${l.regDate}">03.12.2020</td>
 								<td th:text="${l.departDate}">03.13.2020</td>
 								<td th:text="${l.arriveDate}">03.14.2020</td>
-								<td><a th:href="@{#}" class="btn btn-md rounded font-sm">정보등록</a></td>
 							</tr>
 							<tr th:unless="${!#lists.isEmpty(DeliveryInfoList)}">
                           		<td colspan="12">등록없음</td>

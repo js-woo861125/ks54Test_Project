@@ -128,7 +128,9 @@
 			dl.revision_date
 		FROM
 			delivery_list dl inner join customer c
-			using(cust_id);
+			using(cust_id)
+		ORDER BY
+			c.cust_nm;
 	</select>
 	
 	
