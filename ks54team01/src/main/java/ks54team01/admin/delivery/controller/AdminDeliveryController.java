@@ -21,6 +21,20 @@ public class AdminDeliveryController {
 	
 	
 	
+	@GetMapping("/searchDeliveryInfoList")
+	public String getSearchDeliveryInfoList(String searchKey, String searchValue, Model model) {
+		
+		List <AdminDeliveryInfo> DeliveryInfoList = adminDeliveryService.getSearchDeliveryInfoList(searchKey, searchValue);
+		
+		model.addAttribute("title", "배송정보 목록");
+		model.addAttribute("DeliveryInfoList", DeliveryInfoList);
+		model.addAttribute("searchKey", searchKey);
+		model.addAttribute("searchValue", searchValue);
+		
+		return "admin/deliveryInfo/deliveryInfoListView";
+	}
+	
+	
 	@GetMapping("/deliveryInfoList")
 	public String getDeliveryInfoList(Model model) {
 		

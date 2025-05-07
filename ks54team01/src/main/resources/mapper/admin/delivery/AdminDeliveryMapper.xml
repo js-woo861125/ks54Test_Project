@@ -43,6 +43,30 @@
 	</resultMap>
 	
 	
+	<select id="getSearchDeliveryInfoList" parameterType="string" resultMap="deliveryInfoResultMap">
+		/* 배송정보 조회 검색 */
+		SELECT
+			del_info_no,
+			sell_products_no,
+			recipient_nm,
+			delivery_company,
+			billing_number,
+			delivery_request,
+			delivery_progress,
+			register_date,
+			depart_date,
+			arrive_date
+		from
+			delivery_information
+		<where>
+			<if test="searchValue != null and searchValue !=''">
+				${searchKey} LIKE CONCAT('%', #{searchValue}, '%');
+			</if>
+		</where>
+	</select>
+	
+	
+	
 	<select id="getDeliveryInfoList" parameterType="string" resultMap="deliveryInfoResultMap">
 		/* 배송정보 조회 */
 		SELECT

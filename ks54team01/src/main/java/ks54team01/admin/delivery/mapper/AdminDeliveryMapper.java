@@ -10,6 +10,8 @@ import ks54team01.admin.delivery.domain.AdminDeliveryInfo;
 @Mapper
 public interface AdminDeliveryMapper {
 
+	// 상품배송정보 검색
+	List<AdminDeliveryInfo> getSearchDeliveryInfoList(String searchKey, String searchValue);
 	
 	// 상품배송정보 조회
 	List<AdminDeliveryInfo> getDeliveryInfoList();

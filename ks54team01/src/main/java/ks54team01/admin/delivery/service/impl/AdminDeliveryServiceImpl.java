@@ -19,6 +19,21 @@ public class AdminDeliveryServiceImpl implements AdminDeliveryService{
 	private final AdminDeliveryMapper adminDeliveryMapper;
 	
 	
+	
+	@Override
+	public List<AdminDeliveryInfo> getSearchDeliveryInfoList(String searchKey, String searchValue) {
+
+		switch (searchKey) {
+		case "delCompany" 	-> searchKey = "delivery_company";
+		case "delProgress" 	-> searchKey = "delivery_progress";
+		case "recipientNm" 	-> searchKey = "recipient_nm";		
+		}
+		List<AdminDeliveryInfo> adminDeliveryInfoList = adminDeliveryMapper.getSearchDeliveryInfoList(searchKey, searchValue);
+		
+		return adminDeliveryInfoList;
+		
+	}
+	
 	@Override
 	public List<AdminDeliveryInfo> getDeliveryInfoList() {
 
