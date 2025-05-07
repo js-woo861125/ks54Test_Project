@@ -18,14 +18,25 @@ import lombok.extern.slf4j.Slf4j;
 public class CustomerTransferBoardServiceImpl implements CustomerTransferBoardService{
 
 	// DI 의존성주입
-	private final CustomerTransferBoardMapper customertransferBoardMapper;
+	private final CustomerTransferBoardMapper customerTransferBoardMapper;
+	
+	/**
+	 * 양도게시글상세조회
+	 */
+	@Override
+	public CustomerTransferBoard getTransferBoardInfoByCode(String transferBoardNum) {
+		
+		CustomerTransferBoard transferBoardInfo = customerTransferBoardMapper.getTransferBoardInfoByCode(transferBoardNum);
+		
+		return transferBoardInfo;
+	}
 	
 	/**
 	 * 양도게시글목록조회
 	 */
 	@Override
 	public List<CustomerTransferBoard> getTransferBoardList() {
-		List<CustomerTransferBoard> transferBoardList = customertransferBoardMapper.getTransferBoardList();
+		List<CustomerTransferBoard> transferBoardList = customerTransferBoardMapper.getTransferBoardList();
 		return transferBoardList;
 	}
 }
