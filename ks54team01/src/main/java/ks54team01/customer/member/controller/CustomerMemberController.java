@@ -3,11 +3,21 @@ package ks54team01.customer.member.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import ks54team01.customer.member.service.CustomerMemberService;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @Controller
+@RequiredArgsConstructor
 @RequestMapping("/customer/member")
-public class CustomerMainMemberController {
+@Slf4j
+public class CustomerMemberController {
+	
+	private final CustomerMemberService customerMemberService;
 	
 	@GetMapping("/memberLogin")
 	public String getMemberLogin(Model model) {
@@ -24,6 +34,21 @@ public class CustomerMainMemberController {
 		
 		return "customer/member/memberRegisterView";
 	}
+	
+
+	@PostMapping("/idCheck")
+	@ResponseBody
+	public boolean idCheck(String memberId){
+		boolean isDuplicate = false;
+		
+		log.info("체크아이디: {}", memberId);
+		
+		isDuplicate = customerMemberService.isIdCheck(memberId);
+		
+		return isDuplicate;
+	}
+	
+	
 	
 	@GetMapping("/customerRegister")
 	public String getCustomerRegister(Model model) {
