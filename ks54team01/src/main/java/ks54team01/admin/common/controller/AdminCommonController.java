@@ -1,6 +1,7 @@
 package ks54team01.admin.common.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -14,14 +15,14 @@ public class AdminCommonController {
 		return "admin/main";
 	}
 	@GetMapping("/enterpriseList")
-	public String getenterpriseList() {
-		
+	public String getenterpriseList(Model model) {
+		model.addAttribute("title", "입점업체리스트");
 		return "admin/enterprise/enterpriseListView";
 	}
 	
 	@GetMapping("/payment")
-	public String getadminfee() {
+	public String getadminpayment() {
 		
-		return "admin/payment/adminfeeView";
+		return "admin/payment/PaymentView";
 	}
 }
