@@ -21,8 +21,8 @@
 		                <span class="text">회원관리</span>
 		            </a>
 		            <div class="submenu">
-		                <a th:href="@{#}">회원목록</a>
-		                <a th:href="@{#}">로그인 내역조회</a>
+		                <a th:href="@{/admin/member/memberList}">회원목록</a>
+		                <a th:href="@{/admin/member/loginHistoryList}">로그인 내역조회</a>
 		                <a th:href="@{/admin/delivery/deliveryList}">배송지 목록</a>
 		            </div>
 		        </li>
@@ -32,8 +32,8 @@
 		                <span class="text">상품정보관리</span>
 		            </a>
 		            <div class="submenu">
-		                <a th:href="@{#}">상품정보목록</a>
-		                <a th:href="@{#}">상품정보등록</a>
+		                <a th:href="@{/admin/productInfo/categoryList}">상품정보목록</a>
+		                <a th:href="@{/admin/productInfo/addCategory}">상품정보등록</a>
 		            </div>
 		        </li>
 		        <li class="menu-item has-submenu">
@@ -42,7 +42,7 @@
 		                <span class="text">상품관리</span>
 		            </a>
 		            <div class="submenu">
-		                <a th:href="@{#}">상품목록</a>
+		                <a th:href="@{/admin/product/productList}">상품목록</a>
 		                <a th:href="@{#}">상품등록</a>
 		            </div>
 		        </li>
