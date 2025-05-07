@@ -16,6 +16,13 @@ import lombok.RequiredArgsConstructor;
 @lombok.extern.slf4j.Slf4j
 public class ProductController {
 
+	@GetMapping("productDetail")
+	public String getProductDetail() {
+		
+		return "customer/product/productDetail";
+	}
+	
+	
 	@GetMapping("productList")
 	public String getProductList() {
 		
