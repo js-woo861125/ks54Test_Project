@@ -12,6 +12,42 @@
 	</th:block>
 	
 	<th:block layout:fragment="jsScript">
+		<script>
+			/**
+			* 아이디 중복체크
+			*/
+			$('#idCheckBtn').click(function(){
+				const memberId = $('#memberId').val();
+				
+				if(!memberId){
+					alert('아이디를 입력해주세요');
+					$('#memberId').focus();
+					return;
+				}
+				
+				const request = $.ajax({
+					url : '/customer/member/idCheck',
+					method : 'post',
+					data : {'memberId' : memberId},
+					dataType : 'json'
+				});
+				request.done(isDuplicate => {
+					
+					if(isDuplicate){
+						alert('사용할 수 없는 아이디입니다. 다른 아이디를 입력해주세요');
+						$('#memberId').focus();
+						return;
+					}
+				
+					$('#memberRegisterForm').find('input, select, button')
+								   .prop('disabled', isDuplicate);
+				});
+				request.fail((jqXHR, textStatus, error)=>{
+					console.log(jqXHR, textStatus, error);
+				});
+				
+			});
+		</script>
 	</th:block>
 	
 	<!-- 페이지 삽입공간 -->
@@ -36,16 +72,16 @@
                                             <h1 class="mb-5" th:text="${title}"></h1>
                                             <p class="mb-30">이미 회원이신가요? <a href="page-login.html">로그인</a></p>
                                         </div>
-                                        <form method="post">                                         
+                                        <form id="memberRegisterForm" method="post">                                         
                                             <div class="form-group d-flex">
-                                                <input type="text" name="members-id" placeholder="아이디(6-12자 이내, 영문/숫자 사용 가능)" required />
-                                                <button type="submit" class="btn btn-heading btn-block p-10 ml-10">중복확인</button>
+                                                <input type="text" name="memberId" placeholder="아이디(6-12자 이내, 영문/숫자 사용 가능)" required />
+                                                <button type="submit" id="idCheckBtn" class="btn btn-heading btn-block p-10 ml-10">중복확인</button>
                                             </div>                               
                                             <div class="form-group">
-                                                <input type="password" name="members-pw" placeholder="비밀번호(8자 이상, 문자/특수문자/숫자 사용 가능)" required />
+                                                <input type="password" name="memberPw" placeholder="비밀번호(8자 이상, 문자/특수문자/숫자 사용 가능)" required />
                                             </div>
                                             <div class="form-group">
-                                                <input type="password" name="members-pw" placeholder="비밀번호 확인" required />
+                                                <input type="password" name="memberPw" placeholder="비밀번호 확인" required />
                                             </div>
                                         
                                             <div class="custome-radio type-radio">

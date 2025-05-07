@@ -52,8 +52,9 @@
 		                <span class="text">입점업체 관리</span>
 		            </a>
 		            <div class="submenu">
-		                <a th:href="@{#}">입점업체 계약</a>
-		                <a th:href="@{/admin/enterprise/enterpriseList}">입점업체 목록</a>
+           			    <a th:href="@{#}">입점업체&고객 계약목록</a>
+		                <a th:href="@{#}">입점업체 목록</a>
+
 		            </div>
 		        </li>
 		        <li class="menu-item has-submenu">
@@ -73,8 +74,8 @@
 		                <span class="text">결제내역 관리</span>
 		            </a>
 		            <div class="submenu">
-		                <a th:href="@{#}">결제내역 목록</a>
-		                <a th:href="@{#}">배송정보 목록</a>
+		                <a th:href="@{/admin/payment/paymentList}">결제내역 목록</a>
+		                <a th:href="@{/admin/delivery/deliveryInfoList}">배송정보 목록</a>
 		            </div>
 		        </li>
 		        <li class="menu-item has-submenu th:if">

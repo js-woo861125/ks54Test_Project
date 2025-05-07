@@ -7,6 +7,7 @@ import ks54team01.admin.delivery.domain.AdminDeliveryInfo;
 
 public interface AdminDeliveryService {
 	
+	List<AdminDeliveryInfo> getSearchDeliveryInfoList(String searchKey, String searchValue);
 	
 	List<AdminDeliveryInfo> getDeliveryInfoList();
 
