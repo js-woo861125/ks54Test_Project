@@ -12,7 +12,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class AdminEntSeriveiceImpl implements AdminEntListService{
 	
-	private final AdminEntListMapper adminEntListMapper;
+	/* private final AdminEntListMapper adminEntListMapper; */
 	
 	
 }
