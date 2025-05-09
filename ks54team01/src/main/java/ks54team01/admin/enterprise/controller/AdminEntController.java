@@ -30,4 +30,10 @@ public class AdminEntController {
 	    return "admin/enterprise/enterpriseListView";
 	    
 	}
+	@GetMapping("/Detail")
+	public String getEntDetail(Model model) {
+		
+		
+		return "admin/enterprise/enterpriseDetailView";
+	}
 }

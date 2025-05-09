@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import ks54team01.admin.contract.domain.AdminContract;
+import ks54team01.admin.contract.domain.AdminEnterpriseContract;
 
 @Mapper
 public interface AdminContractMapper {
@@ -15,5 +16,7 @@ public interface AdminContractMapper {
 	
 	// 업체&고객 렌탈계약정보 조회
 	List<AdminContract> getContractList();
-
+	
+	// 플랫폼&업체 계약정보 조회
+	List<AdminEnterpriseContract> getAdminEnterpriseContractList();
 }

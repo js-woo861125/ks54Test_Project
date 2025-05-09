@@ -11,4 +11,6 @@ public interface AdminEntMapper {
 	// 거래처 목록 조회
 	List<AdminEntList> getEntList();
 	
+	//
+	
 }

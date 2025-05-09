@@ -64,7 +64,22 @@
 			rental_contract;
 	</select>
 	
-	
+	<select id="getAdminEnterpriseContractList" parameterType="string">
+		 SELECT 
+		 	ec.ent_contract_no,
+		 	ec.ent_ceo_no,
+		 	ec.fee_rate_sales,
+		 	ec.fee_rate_rental,
+		 	ec.fee_rate_penalty,
+		 	ec.entry_fee,
+		 	ec.contract_date,
+		 	ec.contract_expiry_date,
+		 	ec.ent_cal_date,
+		 	ec.contract_status
+		 FROM 
+			 ent_contract ec;
+
+	</select>
 	
 	
 </mapper>

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import ks54team01.admin.contract.domain.AdminContract;
+import ks54team01.admin.contract.domain.AdminEnterpriseContract;
 import ks54team01.admin.contract.service.AdminContractService;
 import lombok.RequiredArgsConstructor;
 
@@ -45,5 +46,12 @@ public class AdminContractController {
 		return "admin/contract/ContractListView";
 	}
 	
+	@GetMapping("/enterpriseContractList")
+	public String getAdminEnterpriseContractList(Model model) {
+		
+		List<AdminEnterpriseContract> EntContractList = adminContractService.getAdminEnterpriseContractList();
+		
+		return "";
+	}
 	
 }

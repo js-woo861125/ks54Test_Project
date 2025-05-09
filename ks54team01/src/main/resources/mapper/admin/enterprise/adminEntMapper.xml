@@ -15,8 +15,8 @@
 			ec.ent_nm as entName, 
 			ec.ent_ceo_phone as ceoTelNo,
 			ec.ent_brno as entBrNo,
-			ct.contract_status as status,
-			ct.contract_expiry_date as endDate
+			ct.contract_status as entContractStatus,
+			ct.contract_expiry_date as contractEndDate
 		FROM 
 			ent_ceo ec LEFT JOIN ent_contract ct
 			ON ec.ent_ceo_no = ct.ent_ceo_no; 
