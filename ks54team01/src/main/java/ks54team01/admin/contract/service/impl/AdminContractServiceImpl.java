@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import ks54team01.admin.contract.domain.AdminContract;
+import ks54team01.admin.contract.domain.AdminEnterpriseContract;
 import ks54team01.admin.contract.mapper.AdminContractMapper;
 import ks54team01.admin.contract.service.AdminContractService;
 import lombok.RequiredArgsConstructor;
@@ -40,5 +41,13 @@ public class AdminContractServiceImpl implements AdminContractService{
 		List<AdminContract> adminContractList = adminContractMapper.getContractList();
 		
 		return adminContractList;
+	}
+	
+	@Override
+	public List<AdminEnterpriseContract> getAdminEnterpriseContractList() {
+		
+		List<AdminEnterpriseContract> adminEnterpriseContractList = adminContractMapper.getAdminEnterpriseContractList();
+		
+		return adminEnterpriseContractList;
 	}
 }
