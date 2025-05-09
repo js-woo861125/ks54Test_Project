@@ -15,8 +15,9 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class AdminEntSeriveiceImpl implements AdminEntListService{
 	
+
 	private final AdminEntMapper adminEntMapper;
-	
+
 	@Override
 	public List<AdminEntList> getEntList() {
 		

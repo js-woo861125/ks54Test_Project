@@ -28,5 +28,6 @@ public class AdminEntController {
 		model.addAttribute("EntList", EntList);
 	    
 	    return "admin/enterprise/enterpriseListView";
+	    
 	}
 }
